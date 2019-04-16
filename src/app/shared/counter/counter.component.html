@@ -1,7 +1,12 @@
-<button (click)="increment()">Increment</button>
- 
+<button mat-flat-button color="primary" (click)="increment()">Increment</button>
+
 <div>Current Count: {{ count$ | async }}</div>
 
-<button (click)="decrement()">Decrement</button>
+<button mat-flat-button color="primary" (click)="decrement()">Decrement</button>
 
-<button (click)="reset()">Reset Counter</button>
+<button mat-flat-button color="secondary" (click)="reset()">Reset Counter</button>
+
+
+<button mat-flat-button color="secondary" (click)="changeColor()">Change Color</button>
+
+<input [(colorPicker)]="color" [style.background]="color" [cpOutputFormat]="'hsla'" (colorPickerChange)="selectColor($event)" />
